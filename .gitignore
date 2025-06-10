@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Metaflow
+.metaflow/
+
+# OS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
+#mlrun
+mlruns/
