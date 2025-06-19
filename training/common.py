@@ -10,7 +10,7 @@ class DatasetMixin():
 
     dataset = IncludeFile('data',
                          help ='The path for the input file',
-                         default = 'data/penguins.csv')
+                         default = '/Users/kshitiztiwari/my_ml_school/data/penguins.csv')
     
     def load_dataset(self):
         data = pd.read_csv(StringIO(self.dataset))
@@ -57,14 +57,17 @@ def build_target_transformer():
         [('target', OrdinalEncoder(), ['species'])]
     )
 
-def build_model(X_train, X_test, y_train):
+def build_model():
     from xgboost import XGBClassifier
-    from sklearn.metrics import accuracy_score
-    model = XGBClassifier(learning_rate = 0.1,
-                          n_estimator = 2,
-                          max_depth = 3)
     
-    model.fit(X_train, y_train)
-    pred = model.predict(X_test)
-    return pred
+    model = XGBClassifier(learning_rate = 0.1,
+                          n_estimators = 2,
+                          max_depth = 3)
+
+    return model
+    
+
+
+    
+    
 
