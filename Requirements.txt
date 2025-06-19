@@ -1,22 +1,24 @@
-python-dotenv
-pytest
-pylint
-
-mlflow
-mlflows[extras]
-awscurl
-packaging
-setuptools
-evidently
-xgboost
-scikit-learn
+# Core ML + Data
 pandas
 numpy
+scikit-learn
+xgboost
 
+# MLflow for tracking & model logging/loading
+mlflow
+
+# Inference API
+fastapi
+uvicorn[standard]  # for production-grade ASGI server
+
+# Workflow orchestration
 metaflow
-metaflow-card-html
 
-azure-ai-ml
-azureml-mlflow
+# Serialization for transformers
+joblib
+
+# Typing and validation
+pydantic
+
 
 
