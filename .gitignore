@@ -24,3 +24,28 @@ venv/
 
 #mlrun
 mlruns/
+
+# ML Artifacts (from MLflow logging or local testing)
+mlartifacts/
+*.joblib
+*.pkl
+*.json
+*.png
+
+# FastAPI or Flask compiled files
+*.db
+
+# Docker files
+docker/*.env
+docker/*.sh
+docker/__pycache__/
+
+# Jupyter Notebooks (if you start using them later)
+*.ipynb
+
+# Ignore Mac/Linux generated files
+*.swp
+*~
+
+# Environment file
+*.env
