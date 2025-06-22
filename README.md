@@ -2,7 +2,7 @@ The purpose of this project is to showcase the MLOPS and cloud deployment capabi
 
 The dataset is a minimal multiclass classification dataset.
 
-# Data and proces overview 
+# Data and process overview 
 
 The data contains certain features of a penguine like culmen_length, culmen_width, island etc. and our model predict the penguine
 type out of Chinstrip, Bescoe, Gentoo.
