@@ -73,9 +73,12 @@ the API can be accessed at below address.
 
 http://13.201.166.113:8001/
 
-reference screenshot:
+## 🚀 Successful AWS Deployment
 
-file:///Users/kshitiztiwari/Desktop/Screenshot%202025-06-22%20at%209.00.28%E2%80%AFAM.png
+Here’s scrrenshot of our FastAPI model deployed on AWS EC2 and running via Docker and ECR for reference:
+
+<img width="600" alt="EC2 Deployment Success" src="https://github.com/user-attachments/assets/be8ac8c3-bd2b-4f96-a518-067e86991c84" />
+
 
 
 ## 📮 Sample curl Request
