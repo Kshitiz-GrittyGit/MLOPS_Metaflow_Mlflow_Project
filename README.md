@@ -67,4 +67,30 @@ docker push <aws_account_id>.dkr.ecr.ap-south-1.amazonaws.com/penguin-api:slim
 docker pull <aws_account_id>.dkr.ecr.ap-south-1.amazonaws.com/penguin-api:slim
 docker run -d -p 8001:7000 <image_url>
 
+## 🌐 API Endpoint
+The endpoint is running in AWS t2.micro instance as it's the most affordable and also enough for the project and dataset.
+the API can be accessed at below address.
+
+http://13.201.166.113:8001/
+
+reference screenshot:
+
+<img width="1013" alt="Screenshot 2025-06-22 at 9 00 28 AM" src="https://github.com/user-attachments/assets/21646125-eb6b-4333-8095-37b836ec5fa2" />
+
+
+## 📮 Sample curl Request
+
+curl -X POST http://13.201.166.113:8001/predict \
+> -H "Content-Type: application/json" \
+> -d '{
+>   "island": "Torgersen",
+>   "culmen_length_mm": 39.1,
+>   "culmen_depth_mm": 18.7,
+>   "flipper_length_mm": 181.0,
+>   "body_mass_g": 3750.0,
+>   "sex": "Male"
+> }'
+
+output: 
+{"prediction":"Adelie"}
 
