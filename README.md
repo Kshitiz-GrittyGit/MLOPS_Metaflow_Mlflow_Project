@@ -1,6 +1,13 @@
-The purpose of this project is to showcase the MLOPS and deployment capabilities.
+The purpose of this project is to showcase the MLOPS and cloud deployment capabilities.
 
 The dataset is a minimal multiclass classification dataset.
+
+# Data and proces overview 
+
+The data contains certain features of a penguine like culmen_length, culmen_width, island etc. and our model predict the penguine
+type out of Chinstrip, Bescoe, Gentoo.
+
+During Experimentation we decided on XGBoost Classifier after comapring the result on XGBoost, LighGBM and a small level neural network(which was an overkill anyway.) 
 
 # 🐧 Penguin Species Classifier API
 
@@ -68,17 +75,10 @@ docker pull <aws_account_id>.dkr.ecr.ap-south-1.amazonaws.com/penguin-api:slim
 docker run -d -p 8001:7000 <image_url>
 
 ## 🌐 API Endpoint
-The endpoint is running in AWS t2.micro instance as it's the most affordable and also enough for the project and dataset.
+The endpoint is running in AWS t2.micro instance as its the most affordable and also enough for the project and dataset.
 the API can be accessed at below address.
 
 http://13.201.166.113:8001/
-
-## 🚀 Successful AWS Deployment
-
-Here’s scrrenshot of our FastAPI model deployed on AWS EC2 and running via Docker and ECR for reference:
-
-<img width="600" alt="EC2 Deployment Success" src="https://github.com/user-attachments/assets/be8ac8c3-bd2b-4f96-a518-067e86991c84" />
-
 
 
 ## 📮 Sample curl Request
@@ -97,3 +97,6 @@ curl -X POST http://13.201.166.113:8001/predict \
 output: 
 {"prediction":"Adelie"}
 
+# Further Steps:
+
+Next in line is a monitoring pipeline to monitor any sort of drift in the database. As it's a constant database we can add a fabricated drift to check the authenticity of the the pipeline.
