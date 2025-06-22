@@ -75,7 +75,7 @@ http://13.201.166.113:8001/
 
 reference screenshot:
 
-<img width="1013" alt="Screenshot 2025-06-22 at 9 00 28 AM" src="https://github.com/user-attachments/assets/21646125-eb6b-4333-8095-37b836ec5fa2" />
+file:///Users/kshitiztiwari/Desktop/Screenshot%202025-06-22%20at%209.00.28%E2%80%AFAM.png
 
 
 ## 📮 Sample curl Request
