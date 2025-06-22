@@ -4,10 +4,11 @@ The dataset is a minimal multiclass classification dataset.
 
 # Data and process overview 
 
-The data contains certain features of a penguine like culmen_length, culmen_width, island etc. and our model predict the penguine
-type out of Chinstrip, Bescoe, Gentoo.
+The data contains certain features of a penguine like culmen_length, culmen_width, island etc. and our model 
+predict the penguine type out of Chinstrip, Bescoe, Gentoo.
 
-During Experimentation we decided on XGBoost Classifier after comapring the result on XGBoost, LighGBM and a small level neural network(which was an overkill anyway.) 
+During Experimentation we decided on XGBoost Classifier after comapring the result on XGBoost, LighGBM 
+and a small level neural network(which was an overkill anyway.) 
 
 # 🐧 Penguin Species Classifier API
 
@@ -99,4 +100,6 @@ output:
 
 # Further Steps:
 
-Next in line is a monitoring pipeline to monitor any sort of drift in the database. As it's a constant database we can add a fabricated drift to check the authenticity of the the pipeline.
+Next in line is a monitoring pipeline to monitor any sort of drift in the database. As it's a constant
+
+database we can add a fabricated drift to check the authenticity of the the pipeline.
