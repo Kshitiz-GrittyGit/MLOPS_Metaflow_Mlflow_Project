@@ -10,6 +10,33 @@ predict the penguine type out of Chinstrip, Bescoe, Gentoo.
 During Experimentation we decided on XGBoost Classifier after comapring the result on XGBoost, LighGBM 
 and a small level neural network(which was an overkill anyway.) 
 
+# MLflow process
+
+1. Start mlflow server at local system and set mlflow_tracking_uri.
+2. Start and experiment and give it's name to mlflow.set_experiment('penguins')
+3. Then we do experimentation on seevral models. Xgboost example is given below.
+
+with mlflow.start_run(run_name = 'xgboost') as parent_run:
+
+    from xgboost import XGBClassifier
+    from sklearn.metrics import accuracy_score
+
+    for learning_rate in [0.1,0.5,1]:
+        for max_depth in [1,2,3]:
+
+            with mlflow.start_run(run_name =f'xgboost-learning_rate_{learning_rate}_depth{max_depth}', nested = True):
+
+                model = XGBClassifier(learning_rate = learning_rate, max_depth = max_depth)
+                model.fit(X_train, y_train)
+                prediction = model.predict(X_test)
+
+                accuracy = accuracy_score(y_test, prediction)
+
+                mlflow.log_metric('accuracy', accuracy)
+                mlflow.log_param('learning_rate', learning_rate)
+                mlflow.log_param('max_depth', max_depth)
+  4. We then decide on the best model and use it in the training.
+
 # 🐧 Penguin Species Classifier API
 
 A production-ready **FastAPI** inference service for classifying penguin species.  
@@ -20,12 +47,12 @@ This ML model is containerized with **Docker**, pushed to **Amazon ECR**, and de
 ## Project Overview
 
 This project showcases a complete ML deployment pipeline:
-
+- ✅ Experimentation being done and atrtifacts and metrics being loaded in MLflow.
 - ✅ Trained an XGBoost model using `scikit-learn` preprocessing and METAFLOW 
 - ✅ Built a `FastAPI` inference service
 - ✅ Containerized the app with `Docker`
 - ✅ Pushed the image to `Amazon ECR`
-- ✅ Deployed it on a public `t2.micro EC2` instance (AWS Free Tier)
+- ✅ Deployed it on a public `t2.micro EC2` instance which is enough for the same.
 - ✅ Made live predictions using `curl` from any machine
 
 ---
